@@ -3,9 +3,9 @@
 source "https://rubygems.org"
 
 gem "watir"
-gem "cucumber", '5.2'
+gem "cucumber"
 gem "rspec"
-gem "capybara", '3.33'
+gem "capybara"
 gem "selenium-webdriver"
 
 # gem "rails"
