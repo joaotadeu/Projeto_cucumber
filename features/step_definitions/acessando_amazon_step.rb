@@ -11,7 +11,6 @@ end
 Então("posiciono um item no carrinho") do
   click_button('add-to-cart-button')
   find('#attachSiNoCoverage > span:nth-child(1) > input:nth-child(1)').click
-  sleep 10
 end
 
 E("valido que o item foi posicionado com sucesso") do
