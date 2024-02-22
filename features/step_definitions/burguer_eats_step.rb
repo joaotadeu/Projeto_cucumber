@@ -1,5 +1,5 @@
 Dado("que abro o navegador e acesso a pagina") do
-    visit "https://buger-eats.vercel.app/"
+    Navegador.new.abrir_pagina('https://buger-eats.vercel.app/')
     expect(page).to have_current_path("https://buger-eats.vercel.app/", url: true)
     find('.content > main:nth-child(2) > a:nth-child(3) > span:nth-child(1)').click
 end
