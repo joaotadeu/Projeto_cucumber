@@ -41,7 +41,7 @@ end
 
 E("efetuo o upload da CNH") do
   file_input = find('.dropzone input[type="file"]', visible: false)
-  file_input.attach_file('/Users/joaotadeu/Documents/Workspace/QAx/features/CNH-falsa.jpeg')
+  file_input.attach_file('/Users/joaotadeu/Documents/Workspace/Cucumber/features/CNH-falsa.jpeg')
   find('.button-success').click
   Funoes_Genericas.countdown(3)
 end
