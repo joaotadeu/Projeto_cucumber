@@ -25,7 +25,6 @@ end
   
 E("escolho o metodo de entrega") do |table|
   entrega_parceiro = table.hashes.first
-
   case entrega_parceiro['Entrega']
   when 'Moto'
     find('.delivery-method > li:nth-child(1)').click
