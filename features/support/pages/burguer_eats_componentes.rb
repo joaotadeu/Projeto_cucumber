@@ -52,5 +52,9 @@ class Navegador < SitePrism::Page
       find('.button-success').click 
     end
 
+    def DadosRecebidosSucesso
+        return find('#swal2-html-container')
+    end
+
 
 end

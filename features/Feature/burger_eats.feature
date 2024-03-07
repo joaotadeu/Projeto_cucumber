@@ -15,4 +15,4 @@ Funcionalidade: Acessando pagina WEB e cadastrando parceiro para entregas
         | Entrega     |
         | Moto        |
     E efetuo o upload da CNH
-    Então valido com sucesso que o parceiro foi cadastrado com sucesso
+    Então devo ver a mensagem "Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato."

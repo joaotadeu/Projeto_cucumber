@@ -18,7 +18,12 @@ E("efetuo o upload da CNH") do
  @Navegador.UploadCnh
 end
 
-Então("valido com sucesso que o parceiro foi cadastrado com sucesso") do
-  alert = @FunçõesGenericas.FindElement('#swal2-html-container')
-  expect(alert.text).to include "Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato."
+Então('devo ver a mensagem {string}') do |mensagem_esperada|
+  @Navegador.DadosRecebidosSucesso
+  #expect(@Navegador.DadosRecebidosSucesso.text).to include(mensagem_esperada) << Alternativa
+  if @Navegador.DadosRecebidosSucesso.text.include?(mensagem_esperada)
+    puts "Mensagem esperada encontrada: #{mensagem_esperada}"
+  else
+    raise "Erro: Mensagem esperada não encontrada. Esperada: #{mensagem_esperada}. Obtida: #{@Navegador.DadosRecebidosSucesso.text}"
+  end
 end
