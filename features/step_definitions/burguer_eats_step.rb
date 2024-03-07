@@ -1,12 +1,12 @@
 Dado("que abro o navegador e acesso a pagina") do
-    @Navegador.AbrirPagina('https://buger-eats.vercel.app/')
-    expect(page).to have_current_path("https://buger-eats.vercel.app/", url: true)
-    @Navegador.CadastroParceiro
+  @Navegador.AbrirPagina('https://buger-eats.vercel.app/')
+  expect(page).to have_current_path("https://buger-eats.vercel.app/", url: true)
+  @Navegador.CadastroParceiro
 end
   
 Quando("preencho os dados do parceiro") do |table|
-    DadosDoParceiro = table.hashes.first
-    @Navegador.PreencherDadosParceiro(DadosDoParceiro)
+  DadosDoParceiro = table.hashes.first
+  @Navegador.PreencherDadosParceiro(DadosDoParceiro)
 end
   
 E("escolho o metodo de entrega") do |table|
@@ -15,7 +15,7 @@ E("escolho o metodo de entrega") do |table|
 end
 
 E("efetuo o upload da CNH") do
- @Navegador.UploadCnh
+  @Navegador.UploadCnh
 end
 
 Então('devo ver a mensagem {string}') do |mensagem_esperada|
