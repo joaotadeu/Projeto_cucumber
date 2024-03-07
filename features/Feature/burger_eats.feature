@@ -10,7 +10,7 @@ Funcionalidade: Acessando pagina WEB e cadastrando parceiro para entregas
     Dado que abro o navegador e acesso a pagina
     Quando preencho os dados do parceiro
         | Nome               | Cpf         | Email            | Whatsapp    | Cep       | Numero | Complemento |
-        | Diana dos Anjos    | 34735407065 | teste@gmail.com  | 11999999999 | 05893-130 |  222   |   casa      |
+        | Diana dos Anjos    | 34735407065 | teste@gmail.com  | 11999999999 | 05893-131 |  222   |   casa      |
     E escolho o metodo de entrega
         | Entrega     |
         | Moto        |
