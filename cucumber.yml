@@ -4,7 +4,7 @@
 # progress: --format progress
 
 default: -p html -p bdd -p json
-html: --format html --out=features.html
+html: --format html --out=report/report_test.html
 dot: --format progress
 bdd: --format pretty
 json: --format json -o "report.json"
