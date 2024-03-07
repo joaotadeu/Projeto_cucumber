@@ -1,19 +1,17 @@
-Dado("que abro o navegador") do
-  visit "https://www.amazon.com.br"
+Dado("que abro o navegador e acesso pagina da amazon") do
+  @NavegandoAmazon.AcessarPaginaWeb('https://www.amazon.com.br')
+  expect(page).to have_current_path('https://www.amazon.com.br', url: true)
 end
 
-Quando("acesso a pagina da amazon") do
-  find("#twotabsearchtextbox").set "ips"
-  find("#nav-search-submit-button").click
-  find('.widgetId\=search-results_5 > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) > a:nth-child(1) > div:nth-child(1) > img:nth-child(1)').click
+Quando ("posiciono um item no carrinho {string}") do |item|
+  @NavegandoAmazon.PosicionandoItemCarrinho(item)
 end
 
-Então("posiciono um item no carrinho") do
-  click_button('add-to-cart-button')
-  find('#attachSiNoCoverage > span:nth-child(1) > input:nth-child(1)').click
-end
-
-E("valido que o item foi posicionado com sucesso") do
-  alert = find('.a-size-medium-plus')
-  expect(alert.text).to include "Adicionado ao carrinho"
+Então("valido que o item foi posicionado com sucesso e foi apresentado mensagem {string}") do |mensagem_esperada|
+  @NavegandoAmazon.ItemPocisionadoCarrinho
+  if @NavegandoAmazon.ItemPocisionadoCarrinho.text.include?(mensagem_esperada)
+    puts "Mensagem esperada encontrada: #{mensagem_esperada}"
+  else
+    raise "Erro: Mensagem esperada não encontrada. Esperada: #{mensagem_esperada}. Obtida: #{@NavegandoAmazon.ItemPocisionadoCarrinho.text}"
+  end
 end

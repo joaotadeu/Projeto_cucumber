@@ -5,9 +5,8 @@ Funcionalidade: Acessando pagina WEB e posicionando item no carrinho
     Posicionando item no carrinho
     validando que o item foi adicionado com sucesso
     
-@teste_positivo_amazon
+@teste_amazon
 Cenario: Acessando pagina web e posicionando item no carrinho e efetuando validação
-Dado que abro o navegador
-Quando acesso a pagina da amazon
-Então posiciono um item no carrinho
-E valido que o item foi posicionado com sucesso
+Dado que abro o navegador e acesso pagina da amazon
+Quando posiciono um item no carrinho "ips"
+Então valido que o item foi posicionado com sucesso e foi apresentado mensagem "Adicionado ao carrinho"
