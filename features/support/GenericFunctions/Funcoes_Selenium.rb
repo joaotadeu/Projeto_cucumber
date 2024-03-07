@@ -8,7 +8,7 @@ class Navegador
   def initialize(driver = :firefox)
     Capybara.default_driver = driver
     Capybara.register_driver driver do |app|
-      Capybara::Selenium::Driver.new(app, browser: driver)
+    Capybara::Selenium::Driver.new(app, browser: driver)
     end
   end
 
