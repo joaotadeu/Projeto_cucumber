@@ -8,3 +8,4 @@ gem "capybara"
 gem "selenium-webdriver"
 gem "allure-cucumber"
 gem "site_prism"
+gem 'report_builder'

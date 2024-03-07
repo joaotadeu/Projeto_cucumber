@@ -1,6 +1,7 @@
 require "cucumber"
 require "capybara/cucumber"
 require "site_prism"
+require 'report_builder'
 
 Capybara.configure do |config|
     config.default_driver = :selenium
