@@ -20,4 +20,4 @@ Funcionalidade: Acessando pagina WEB e cadastrando parceiro para entregas
     Exemplos:
         | Nome         | Cpf          | Email             | Whatsapp      | Cep       | Numero | Complemento | Entrega     | Mensagem                                                                                              |
         | Diana Anjos  | 34735407065  | teste@gmail.com   | 11999999999   | 05893-131 | 10     | casa        | Moto        | Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.   |
-        | João Pereira | 12345678910  | teste@outlook.com | 11999999998   | 05894-311 | 22     | apt         | Bicicleta   | Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.   |
+        | João Pereira | 12345678910  | teste@outlook.com | 11999999998   | 05894-311 | 22     | apt         | Carro       | Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.   |

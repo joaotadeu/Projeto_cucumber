@@ -8,13 +8,12 @@ Quando("preencho os dados do parceiro") do |table|
   DadosDoParceiro = table.hashes
   DadosDoParceiro.each do |dados_parceiro|
   @Navegador.PreencherDadosParceiro(DadosDoParceiro)
-  @FunçõesGenericas.Countdown(5)
   end
 end
   
 E("escolho o metodo de entrega") do |table|
-  tipo_entrega = table.hashes.first
-  @Navegador.MetodoEntrega(tipo_entrega['Entrega'])
+  tipos_entrega = table.hashes
+  @Navegador.MetodoEntrega(tipos_entrega)
 end
 
 E("efetuo o upload da CNH") do

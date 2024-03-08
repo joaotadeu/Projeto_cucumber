@@ -28,8 +28,9 @@ class Navegador < SitePrism::Page
       end
     end
 
-    def MetodoEntrega(tipo_entrega)
-        case tipo_entrega
+    def MetodoEntrega(tipos_entrega)
+      tipos_entrega.each do |tipo_entrega|
+        case tipo_entrega['Entrega']
         when 'Moto'
           find('.delivery-method > li:nth-child(1)').click
         when 'Bicicleta'
@@ -39,6 +40,7 @@ class Navegador < SitePrism::Page
         else
           puts "Método de entrega não reconhecido: #{tipo_entrega['Entrega']}"
         end
+      end
     end
 
     def UploadCnh
