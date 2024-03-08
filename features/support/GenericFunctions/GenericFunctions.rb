@@ -18,7 +18,7 @@ class GenericFunctions
   end
   
   def UploadArquivo(file_input, elemento)
-    file_input = FindElement(elemento, visible: false)
+    file_input = FindElement(elemento)
     file_input.attach_file(file_input)
   end
 
