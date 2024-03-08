@@ -38,7 +38,7 @@ class Navegador < SitePrism::Page
         when 'Carro'
           find('.delivery-method > li:nth-child(3)').click
         else
-          puts "Método de entrega não reconhecido: #{tipo_entrega['Entrega']}"
+          raise "Método de entrega não reconhecido: #{tipo_entrega['Entrega']}"
         end
       end
     end
