@@ -9,28 +9,23 @@ class Navegador < SitePrism::Page
     end
 
     def PreencherDadosParceiro(dados_parceiro)
-        campo_nome = find("#page-deliver > form:nth-child(2) > fieldset:nth-child(2) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)")
+      dados_parceiro.each do |dados_parceiro|
+        campo_nome = find("#page-deliver input[name='name']")
         campo_nome.fill_in(with: dados_parceiro['Nome'])
-      
         campo_cpf = find('input[name="cpf"]')
         campo_cpf.fill_in(with: dados_parceiro['Cpf'])
-      
         campo_email = find('input[name="email"]')
         campo_email.fill_in(with: dados_parceiro['Email'])
-      
         campo_wpp = find('input[name="whatsapp"]')
         campo_wpp.fill_in(with: dados_parceiro['Whatsapp'])
-      
         campo_cep = find('input[name="postalcode"]')
         campo_cep.fill_in(with: dados_parceiro['Cep'])
-      
         click_button "Buscar CEP"
-      
         campo_num = find('input[name="address-number"]')
         campo_num.fill_in(with: dados_parceiro['Numero'])
-      
         campo_comp = find('input[name="address-details"]')
         campo_comp.fill_in(with: dados_parceiro['Complemento'])
+      end
     end
 
     def MetodoEntrega(tipo_entrega)

@@ -5,8 +5,11 @@ Dado("que abro o navegador e acesso a pagina") do
 end
   
 Quando("preencho os dados do parceiro") do |table|
-  DadosDoParceiro = table.hashes.first
+  DadosDoParceiro = table.hashes
+  DadosDoParceiro.each do |dados_parceiro|
   @Navegador.PreencherDadosParceiro(DadosDoParceiro)
+  @FunçõesGenericas.Countdown(5)
+  end
 end
   
 E("escolho o metodo de entrega") do |table|
