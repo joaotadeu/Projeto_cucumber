@@ -5,7 +5,7 @@ require 'selenium-webdriver'
 class GenericFunctions
   include Capybara::DSL
   
-  def self.countdown(seconds)
+  def Countdown(seconds)
     seconds.times do |i|
       print "\r-> WARN: Aguardando #{seconds - i} Segundos"
       sleep(1)

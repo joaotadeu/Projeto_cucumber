@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
+# gem "allure-cucumber", "2.13.6.41"
 gem "watir"
 gem "cucumber"
 gem "rspec"

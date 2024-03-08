@@ -3,8 +3,8 @@
 # pretty: --format pretty
 # progress: --format progress
 
-default: -p html -p bdd -p json
-html: --format html --out=report/report_test.html
+default: --publish-quiet -p html -p bdd -p json
+html: --format html --out=test_report/report_test.html
 dot: --format progress
 bdd: --format pretty
 json: --format json -o "report.json"
