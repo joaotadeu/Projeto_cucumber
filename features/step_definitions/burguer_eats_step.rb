@@ -16,13 +16,15 @@ E("escolho o metodo de entrega") do |table|
   @Navegador.MetodoEntrega(tipos_entrega)
 end
 
-E("efetuo o upload da CNH") do
-  @Navegador.UploadCnh
+E("efetuo o upload da CNH") do |table|
+  caminhos_arquivos_cnh = table.hashes
+  caminhos_arquivos_cnh.each do |caminho_arquivo_cnh|
+    @Navegador.UploadCnh(caminho_arquivo_cnh['CNH'])
+  end
 end
 
 Então('devo ver a mensagem {string}') do |mensagem_esperada|
   @Navegador.DadosRecebidosSucesso
-  #expect(@Navegador.DadosRecebidosSucesso.text).to include(mensagem_esperada) << Alternativa
   if @Navegador.DadosRecebidosSucesso.text.include?(mensagem_esperada)
     puts "Mensagem esperada encontrada: #{mensagem_esperada}"
   else

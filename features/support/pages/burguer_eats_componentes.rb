@@ -43,15 +43,14 @@ class Navegador < SitePrism::Page
       end
     end
 
-    def UploadCnh
+    def UploadCnh(caminho_arquivo_cnh)
       file_input = find('.dropzone input[type="file"]', visible: false)
-      file_input.attach_file('/Users/joaotadeu/Documents/Workspace/Cucumber/features/CNH-falsa.jpeg')
-      find('.button-success').click 
+      file_input.attach_file(caminho_arquivo_cnh)
+      find('.button-success').click
     end
 
     def DadosRecebidosSucesso
         return find('#swal2-html-container')
     end
-
 
 end
