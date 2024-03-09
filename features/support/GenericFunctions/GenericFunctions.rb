@@ -22,4 +22,8 @@ class GenericFunctions
     file_input.attach_file(file_input)
   end
 
+  def AbrirPaginas(url)
+    visit(url)
+  end
+
 end

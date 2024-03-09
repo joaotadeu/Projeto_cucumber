@@ -1,7 +1,7 @@
 class NavegandoAmazon < SitePrism::Page
 
-    def AcessarPaginaWeb(url)
-        visit(url)
+    def AcessarPaginaWeb
+        visit 'https://www.amazon.com.br'
     end
 
     def PosicionandoItemCarrinho(item)

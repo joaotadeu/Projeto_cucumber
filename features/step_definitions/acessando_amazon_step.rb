@@ -1,5 +1,5 @@
 Dado("que abro o navegador e acesso pagina da amazon") do
-  @NavegandoAmazon.AcessarPaginaWeb('https://www.amazon.com.br')
+  @NavegandoAmazon.AcessarPaginaWeb
   expect(page).to have_current_path('https://www.amazon.com.br', url: true)
 end
 

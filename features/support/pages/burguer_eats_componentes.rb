@@ -1,8 +1,12 @@
 class Navegador < SitePrism::Page
     
-    def AbrirPagina(url)
+    def AbrirPaginas(url)
         visit(url)
     end
+
+    def AbrirPagina
+      visit 'https://buger-eats.vercel.app'
+  end
 
     def CadastroParceiro
         return find('.content > main:nth-child(2) > a:nth-child(3) > span:nth-child(1)').click

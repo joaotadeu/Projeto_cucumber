@@ -1,5 +1,5 @@
 Dado("que abro o navegador e acesso a pagina") do
-  @Navegador.AbrirPagina('https://buger-eats.vercel.app/')
+  @Navegador.AbrirPagina
   expect(page).to have_current_path("https://buger-eats.vercel.app/", url: true)
   @Navegador.CadastroParceiro
 end
