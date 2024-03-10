@@ -12,11 +12,11 @@ Funcionalidade: Acessando pagina WEB e cadastrando parceiro para entregas
         | Nome      | Cpf   | Email    | Whatsapp    | Cep    | Numero   | Complemento   |
         | <Nome>    | <Cpf> | <Email>  | <Whatsapp>  | <Cep>  | <Numero> | <Complemento> |
     E escolho o metodo de entrega
-        | Entrega     |
-        | <Entrega>   |
+        | Entrega   |
+        | <Entrega> |
     E efetuo o upload da CNH
-        | CNH         |
-        | <CNH>       |
+        | CNH   |
+        | <CNH> |
     Então devo ver a mensagem "<Mensagem>"
 
     Exemplos:
