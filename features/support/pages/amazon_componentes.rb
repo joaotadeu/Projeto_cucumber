@@ -7,7 +7,7 @@ class NavegandoAmazon < SitePrism::Page
     def PosicionandoItemCarrinho(item)
         find("#twotabsearchtextbox").set (item)
         find("#nav-search-submit-button").click
-        find('.widgetId\=search-results_2 > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > h2:nth-child(1) > a:nth-child(1) > span:nth-child(1)').click
+        find('.widgetId\=search-results_1 > span:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > h2:nth-child(1) > a:nth-child(1) > span:nth-child(1)').click
         click_button('add-to-cart-button')
         # find('#attachSiNoCoverage > span:nth-child(1) > input:nth-child(1)').click
     end
