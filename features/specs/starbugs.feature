@@ -9,22 +9,34 @@ Funcionalidade: Catálogo de cafés
         Dado que abro o navegador e acesso a pagina do starbugs
         Então eu devo visualizar uma lista de cafés disponíveis
 
-
+    @checkout
     Esquema do Cenário: Iniciar a compra de um café
     Dado que estou na página principal da Starbugs
         E que desejo comprar o seguinte produto:
-        | name        | Expresso Gelado |    
-        | price       | R$ 9,99         |
-        | delivery    | R$ 10,00        |
-        # Muito importante a definição de qual tipo de dado está sendo inserido no teste, nesse caso (String)
+        | Nome             | Preço    | Entrega  |   
+        | Expresso Gelado  | R$ 9,99  | R$ 10,00 |
     Quando inicio a compra desse item
     Então devo ver a página de Checkout com os detalhes do produto
         E o valor total da compra deve ser de "R$ 19,99"
 
-    @temp
+    @compra_com_sucesso
+    Cenario: Compra bem sucedida
+    Dado que estou na página principal da Starbugs
+        E que iniciei a compra do item "Expresso Tradicional"
+    Quando faço a bsca do seguinte CEP: "14020055"
+        E informo os demais dados do endereço:
+        | Numero   | Detalhes     |    
+        | 1972     | Apto 11      |
+        E escolho a forma de pagamento: "Cartão de Crédito"
+        E por fim finalizo a compra
+     Então sou redirecionado para a página de confirmação de Pedidos
+        E deve ser informado o seguinte prazo de entrega: "20 min - 30 min"
+
+    @compra_indisponivel
     Cenário: Café indisponível
         Dado que estou na página principal da Starbugs
         E que desejo comprar o seguinte produto:
-        | name        | Expresso Cremoso |    
+        | Nome              | 
+        | Expresso Cremoso  |    
         Quando inicio a compra desse item
         Então devo ver um popup informando que o produto está indisponível
