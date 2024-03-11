@@ -6,7 +6,7 @@ Funcionalidade: Catálogo de cafés
 
     @validação_catalogo
     Cenario: Acessando pagina web do starbugs e efetuar compras
-        Dado que estou na pagina principal da Starbugs
+        Dado que estou na página principal da Starbugs
         Então eu devo visualizar uma lista de cafés disponíveis
 
     @checkout_cafe
