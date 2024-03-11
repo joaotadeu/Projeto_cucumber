@@ -2,7 +2,7 @@ Before do
  @Navegador = Navegador.new
  @FunçõesGenericas = GenericFunctions.new
  @NavegandoAmazon = NavegandoAmazon.new
- @HomePageStartbugs = HomePage.new
+ @PageStarbugs = PageStarbugs.new
 end
    
 After do |scenario|
