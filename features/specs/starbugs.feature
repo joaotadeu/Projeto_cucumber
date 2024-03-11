@@ -4,20 +4,20 @@ Funcionalidade: Catálogo de cafés
     Como um usuário do site, eu quero ver o catálogo de cafés na pagina principal
     Para que eu possa escolher e saber mais sobre os produtos disponíveis
 
-    @compra_starbugs
+    @validação_catalogo
     Cenario: Acessando pagina web do starbugs e efetuar compras
-        Dado que abro o navegador e acesso a pagina do starbugs
+        Dado que estou na pagina principal da Starbugs
         Então eu devo visualizar uma lista de cafés disponíveis
 
-    @checkout
+    @checkout_cafe
     Esquema do Cenário: Iniciar a compra de um café
     Dado que estou na página principal da Starbugs
         E que desejo comprar o seguinte produto:
-        | Nome             | Preço    | Entrega  |   
-        | Expresso Gelado  | R$ 9,99  | R$ 10,00 |
+        | Nome            | Preço    | Entrega  |
+        | Expresso Gelado | R$ 9,99  | R$ 10,00 |
     Quando inicio a compra desse item
     Então devo ver a página de Checkout com os detalhes do produto
-        E o valor total da compra deve ser de "R$ 19,99"
+        E o valor total da compra deve ser de 'R$ 19,99'
 
     @compra_com_sucesso
     Cenario: Compra bem sucedida
