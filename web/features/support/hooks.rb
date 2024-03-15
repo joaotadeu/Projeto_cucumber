@@ -3,6 +3,7 @@ Before do
  @FunçõesGenericas = GenericFunctions.new
  @NavegandoAmazon = NavegandoAmazon.new
  @PageStarbugs = PageStarbugs.new
+ @NavegarRockLov = NavegarRockLov.new
 end
    
 After do |scenario|
