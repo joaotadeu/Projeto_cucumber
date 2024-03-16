@@ -27,9 +27,9 @@ Funcionalidade: Acessando pagina Web RockLov
 
     Exemplos:
         | nome            | email                   | senha | mensagem_esperada                |
-        |                 | dianinha@gmail.com      | 123   | Oops. Informe seu nome completo! |
+        |                 | dianinha2@gmail.com      | 123   | Oops. Informe seu nome completo! |
         | João Tadeu      |                         | 321   | Oops. Informe um email válido!   |
-        | Manu dos anjos  | manuzinha@outlook.com   |       | Oops. Informe sua senha secreta! |
+        | Manu dos anjos  | manuzinha2@outlook.com   |       | Oops. Informe sua senha secreta! |
 
     @cadastro_com_sucesso
     Esquema do Cenario: Acessando e efetuando de cadastro web rocklov
@@ -41,29 +41,29 @@ Funcionalidade: Acessando pagina Web RockLov
 
     Exemplos:
         | nome            | email                   | senha | mensagem_esperada |
-        | João Tadeu      | JoaoTadeu2@gmail.com     | 321   | Let`s Rock Baby   |
-        | Manu dos anjos  | manuzinha2@outlook.com   | 123   | Let`s Rock Baby   |
+        | João Tadeu      | JoaoTadeu4@gmail.com    | 321   | Let`s Rock Baby   |
+        | Manu dos anjos  | manuzinha4@outlook.com  | 123   | Let`s Rock Baby   |
 
     @login_rocklov
     Cenario: Acessar pagina rocklov web e efetuar o login
-    Dado que estou na página principal do RockLov
+    Dado que estou na página de login do RockLov
     Quando preencho minhas credenciais "teste@gmail.com" e "123"
-    Então valido que fui logado com sucesso
-    E valido que fui encaminhado para tela de cadastro de anuncio
+    Então sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
+
 
     @cadastro_de_anuncio
     Esquema do Cenario: Acessar pagina de cadastro de anuncio e efetuar o cadastro do mesmo
-    Dado que estou na página principal do RockLov
+    Dado que estou na página de login do RockLov
     Quando preencho minhas credenciais "teste@gmail.com" e "123"
     Então valido que fui logado com sucesso
     E valido que fui encaminhado para tela de cadastro de anuncio
     Então efetuo o cadastro do anuncio
-        | Equipamento   | Categoria   | Valor da Diaria   |
-        | <Equipamento> | <Categoria> | <Valor da Diaria> |
+        | Equipamento   | Categoria   | Valor_Diaria    |
+        | <Equipamento> | <Categoria> | <Valor_Diaria>  |
     
     Exemplos:
-        | Equipamento  | Categoria |  Valor da Diaria | Caminho                   |
-        |              |           |                  |                           | 
+        | Equipamento  | Categoria | Valor_Diaria | Caminho_Arquivo       |
+        |              |           |              |                       | 
 
     
     @deletar_anuncio

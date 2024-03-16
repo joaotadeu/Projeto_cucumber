@@ -38,4 +38,10 @@ class NavegarRockLov < SitePrism::Page
         mensagem_recebida = find('.nav').text
         mensagem_recebida.eql?(mensagem_esperada)
     end
+
+    def LoginComSucesso(email, senha)
+        find('#email').set(email)
+        find('#password').set(senha)
+        click_on "Entrar"
+    end
 end
