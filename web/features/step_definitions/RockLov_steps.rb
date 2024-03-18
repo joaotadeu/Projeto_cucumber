@@ -8,14 +8,14 @@ end
   
 Então('devo visualizar todos com componentes disponiveis na tela de login') do
     expect(@NavegarRockLov.ListaElementosRockLovLogin).to be_visible
-
 end
   
 Dado('devo visualizar todos com componentes disponiveis na tela de cadastro') do
-  expect(@NavegarRockLov.ListaElementosRockLovCadastro).to be_visible
+   expect(@NavegarRockLov.ListaElementosRockLovCadastro).to be_visible
 end
   
 Quando('preencho minhas credenciais de cadastro') do |table|
+  @MongoDB.RemoveUser(dados_usuario['email'])
     table.hashes.each do |dados_usuario|
       @NavegarRockLov.CadastroRockLov(dados_usuario['nome'], dados_usuario['email'], dados_usuario['senha'])
     end
@@ -37,6 +37,8 @@ Então('valido que fui logado com sucesso') do
   expect(@NavegarRockLov.MensagemEsperadaDashboard(mensagem_esperada)).to be true
 end
 
-Então('valido que fui encaminhado para tela de cadastro de anuncio') do
-  pending # Write code here that turns the phrase above into concrete actions
+E('efetuo o cadastro do anuncio') do |table|
+    table.hashes.each do |dados_usuario|
+      @NavegarRockLov.CadastroRockLov(dados_usuario['Equipamento'], dados_usuario['Categoria'], dados_usuario['Caminho_Arquivo'])
+    end
 end

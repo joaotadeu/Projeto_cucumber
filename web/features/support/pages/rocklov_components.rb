@@ -44,4 +44,16 @@ class NavegarRockLov < SitePrism::Page
         find('#password').set(senha)
         click_on "Entrar"
     end
+
+    def CriarAnuncio(equipamento, categoria, valor_diaria, caminho_arquivo)
+        click_on "Criar anúncio"
+        find('#name').set(equipamento)
+        find('#category').set(categoria)
+        find('#price').set(valor_diaria)
+
+        file_input = find('#thumbnail', visible: false)
+        file_input.attach_file(caminho_arquivo)
+        find('.button-success').click
+        click_on "submit"
+    end  
 end
