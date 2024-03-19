@@ -1,4 +1,9 @@
 class NavegarRockLov < SitePrism::Page
+
+    def initialize
+        @FunçõesGenericas = GenericFunctions.new
+    end
+
     def AcessarPaginaRockLovLogin
         visit 'http://rocklov-web:3000/'
     end
@@ -46,14 +51,14 @@ class NavegarRockLov < SitePrism::Page
     end
 
     def CriarAnuncio(equipamento, categoria, valor_diaria, caminho_arquivo)
-        click_on "Criar anúncio"
-        find('#name').set(equipamento)
-        find('#category').set(categoria)
-        find('#price').set(valor_diaria)
-
-        file_input = find('#thumbnail', visible: false)
-        file_input.attach_file(caminho_arquivo)
-        find('.button-success').click
+        find('.btn').click
+        find('input[placeholder$=equipamento]').set(equipamento)
+        find('#category').find('option', text: (categoria)).select_option
+        find('input[placeholder*=Valor]').set(valor_diaria)
+        file_input = Dir.pwd + '/features/support/images/' + caminho_arquivo
+        find('#thumbnail input[type=file]', visible: false).set file_input        
+        @FunçõesGenericas.Countdown(5)
+        find('.button-success').click #<< Implementar aqui
         click_on "submit"
-    end  
+    end 
 end

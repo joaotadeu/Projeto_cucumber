@@ -48,20 +48,20 @@ Funcionalidade: Acessando pagina Web RockLov
     Cenario: Acessar pagina rocklov web e efetuar o login
     Dado que estou na página de login do RockLov
     Quando preencho minhas credenciais "teste@gmail.com" e "123"
-    Então sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
+    E sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
 
     @cadastro_de_anuncio
     Esquema do Cenario: Acessar pagina de cadastro de anuncio e efetuar o cadastro do mesmo
     Dado que estou na página de login do RockLov
     Quando preencho minhas credenciais "teste@gmail.com" e "123"
-    Então sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
+    E sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
     Então efetuo o cadastro do anuncio
-        | Equipamento   | Categoria   | Valor_Diaria    | Caminho_Arquivo  |
-        | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo |
+        | Equipamento   | Categoria   | Valor_Diaria    | Caminho_Arquivo   |
+        | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo> |
     
     Exemplos:
-        | Equipamento  | Categoria | Valor_Diaria | Caminho_Arquivo                                                            |
-        | Violão       | Cordas    |  100         | /Users/joaotadeu/Documents/Workspace/Cucumber/web/features/CNH-falsa2.jpeg | 
+        | Equipamento  | Categoria | Valor_Diaria | Caminho_Arquivo |
+        | Violão       | Cordas    |  100         | CNH-falsa.jpeg  | 
 
     
     @cadastro_de_anuncio_sem_sucesso
