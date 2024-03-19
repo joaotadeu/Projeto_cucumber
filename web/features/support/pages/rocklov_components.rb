@@ -58,7 +58,6 @@ class NavegarRockLov < SitePrism::Page
         file_input = Dir.pwd + '/features/support/images/' + caminho_arquivo
         find('#thumbnail input[type=file]', visible: false).set file_input        
         @FunçõesGenericas.Countdown(5)
-        find('.button-success').click #<< Implementar aqui
-        click_on "submit"
+        click_on "Cadastrar"
     end 
 end
