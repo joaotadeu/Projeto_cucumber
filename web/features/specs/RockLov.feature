@@ -41,7 +41,7 @@ Funcionalidade: Acessando pagina Web RockLov
 
     Exemplos:
         | nome            | email                   | senha | mensagem_esperada |
-        | João Tadeu      | JoaoTadeu4@gmail.com    | 321   | Let`s Rock Baby   |
+        | João Tadeu      | joaoTadeu4@gmail.com    | 321   | Let`s Rock Baby   |
         | Manu dos anjos  | manuzinha4@outlook.com  | 123   | Let`s Rock Baby   |
 
     @login_rocklov
@@ -60,13 +60,13 @@ Funcionalidade: Acessando pagina Web RockLov
         | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo> |
     
     Exemplos:
-        | Equipamento        | Categoria          | Valor_Diaria | Caminho_Arquivo |
-        | Violão             | Cordas             |  100         | Violão.png      | 
-        | Guitarra           | Cordas             |  150         | Guitarra.png    | 
-        | Subwoofer          | Áudio e Tecnologia |  250         | Subwoofer.png   |
-        | Bateria            | Baterias           |  350         | Bateria.png     |
-        | Teclado            | Teclas             |  400         | Teclado.png     |
-        | Flauta tranversal  | Outros             |  100         | Flauta.png      |
+        | Equipamento        | Categoria          | Valor_Diaria  | Caminho_Arquivo |
+        | Violão             | Cordas             | 100           | Violão.png      | 
+        | Guitarra           | Cordas             | 150           | Guitarra.png    | 
+        | Subwoofer          | Áudio e Tecnologia | 250           | Subwoofer.png   |
+        | Bateria            | Baterias           | 350           | Bateria.png     |
+        | Teclado            | Teclas             | 400           | Teclado.png     |
+        | Flauta transversal | Outros             | 100           | Flauta.png      |
 
     @cadastro_de_anuncio_sem_sucesso
     Esquema do Cenario: Acessar pagina de cadastro de anuncio e efetuar o cadastro do mesmo
