@@ -63,4 +63,9 @@ class NavegarRockLov < SitePrism::Page
     def MensagemEsperadaCadastroSemSucesso
         find('.alert').text
     end
+
+    def DeletarAnuncio
+    find('.equipo-list > li:nth-child(1) > i:nth-child(4)').click
+    click_on 'Sim'
+    end
 end

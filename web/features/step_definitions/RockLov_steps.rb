@@ -21,8 +21,7 @@ Quando('preencho minhas credenciais de cadastro') do |table|
 end
 
 Então('efetuo a operação deletar anuncio') do
-  find('.equipo-list > li:nth-child(1) > i:nth-child(4)').click
-  click_on 'Sim'
+  @NavegarRockLov.DeletarAnuncio
 end
 
 Então('devo ver a seguinte mensagem {string}') do |mensagem_esperada|

@@ -3,6 +3,7 @@ require "capybara/cucumber"
 require "site_prism"
 require 'report_builder'
 #require 'allure-cucumber'
+require 'mongo'
 
 Capybara.configure do |config|
     config.default_driver = :selenium

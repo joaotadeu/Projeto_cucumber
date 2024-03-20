@@ -4,6 +4,7 @@ Before do
  @NavegandoAmazon = NavegandoAmazon.new
  @PageStarbugs = PageStarbugs.new
  @NavegarRockLov = NavegarRockLov.new
+ @MongoDB = MongoDB.new
 end
    
 After do |scenario|
