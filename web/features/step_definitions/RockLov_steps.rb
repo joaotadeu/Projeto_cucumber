@@ -15,7 +15,6 @@ Quando('preencho minhas credenciais {string} e {string}') do |email, senha|
 end
 
 Quando('preencho minhas credenciais de cadastro') do |table|
-  @MongoDB.RemoveUser(dados_usuario['email'])
     table.hashes.each do |dados_usuario|
       @NavegarRockLov.CadastroRockLov(dados_usuario['nome'], dados_usuario['email'], dados_usuario['senha'])
     end
