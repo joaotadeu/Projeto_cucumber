@@ -57,7 +57,10 @@ class NavegarRockLov < SitePrism::Page
         find('input[placeholder*=Valor]').set(valor_diaria)
         file_input = Dir.pwd + '/features/support/images/' + caminho_arquivo
         find('#thumbnail input[type=file]', visible: false).set file_input        
-        @FunçõesGenericas.Countdown(5)
         click_on "Cadastrar"
     end 
+
+    def MensagemEsperadaCadastroSemSucesso
+        find('.alert').text
+    end
 end

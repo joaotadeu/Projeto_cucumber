@@ -55,32 +55,31 @@ Funcionalidade: Acessando pagina Web RockLov
     Dado que estou na página de login do RockLov
     Quando preencho minhas credenciais "teste@gmail.com" e "123"
     E sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
-    Então efetuo o cadastro do anuncio
+    Então efetuo tentativa de cadastro do anuncio
         | Equipamento   | Categoria   | Valor_Diaria    | Caminho_Arquivo   |
         | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo> |
     
     Exemplos:
-        | Equipamento        | Categoria          | Valor_Diaria  | Caminho_Arquivo |
-        | Violão             | Cordas             | 100           | Violão.png      | 
-        | Guitarra           | Cordas             | 150           | Guitarra.png    | 
-        | Subwoofer          | Áudio e Tecnologia | 250           | Subwoofer.png   |
-        | Bateria            | Baterias           | 350           | Bateria.png     |
-        | Teclado            | Teclas             | 400           | Teclado.png     |
-        | Flauta transversal | Outros             | 100           | Flauta.png      |
+        | Equipamento   | Categoria          | Valor_Diaria  | Caminho_Arquivo |
+        | Violão        | Cordas             | 100           | Violão.png      |  
+        | Subwoofer     | Áudio e Tecnologia | 250           | Subwoofer.png   |
+        | Bateria       | Baterias           | 350           | Bateria.png     |
+        | Teclado       | Teclas             | 400           | Teclado.png     |
 
     @cadastro_de_anuncio_sem_sucesso
     Esquema do Cenario: Acessar pagina de cadastro de anuncio e efetuar o cadastro do mesmo
     Dado que estou na página de login do RockLov
     Quando preencho minhas credenciais "teste@gmail.com" e "123"
-    Então valido que fui logado com sucesso
-    E efetuo o cadastro do anuncio
-        | Equipamento   | Categoria   | Valor_Diaria    |
-        | <Equipamento> | <Categoria> | <Valor_Diaria>  |
+    E sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
+    Então efetuo tentativa de cadastro do anuncio
+        | Equipamento   | Categoria   | Valor_Diaria    | Caminho_Arquivo   |
+        | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo> |
+    E valido que apos quatro anuncios é visto a mensagem "<Mensagem_esperada>"
     
     Exemplos:
-        | Equipamento  | Categoria | Valor_Diaria | Caminho_Arquivo                                                             |
-        | Violão       | Cordas    |  100         | /Users/joaotadeu/Documents/Workspace/Cucumber/web/features/CNH-falsa2.jpeg  |
-
+        | Equipamento  | Categoria          | Valor_Diaria  | Caminho_Arquivo | Mensagem_esperada                   |
+        | Guitarra     | Cordas             |               | Guitarra.png    | 💰 Informe o valor da diária         |
+        |              | Baterias           | 350           | Bateria.png     | 🎸 Informe a descrição do anúncio!   |
     
     @deletar_anuncio
     Cenario: Acessar pagina rocklov web e efetuar o login e deletar um anuncio
