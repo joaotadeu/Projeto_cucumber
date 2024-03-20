@@ -88,7 +88,7 @@ Funcionalidade: Acessando pagina Web RockLov
     E sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
     Então efetuo tentativa de cadastro do anuncio
         | Equipamento   | Categoria   | Valor_Diaria    | Caminho_Arquivo   |
-        | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo> |
+        | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo> | 
     Então efetuo a operação deletar anuncio
     
     Exemplos:
