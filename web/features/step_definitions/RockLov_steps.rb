@@ -20,6 +20,11 @@ Quando('preencho minhas credenciais de cadastro') do |table|
     end
 end
 
+Então('efetuo a operação deletar anuncio') do
+  find('.equipo-list > li:nth-child(1) > i:nth-child(4)').click
+  click_on 'Sim'
+end
+
 Então('devo ver a seguinte mensagem {string}') do |mensagem_esperada|
     expect(@NavegarRockLov.MensagemEsperadaTentativaCadastro(mensagem_esperada)).to be true
 end
@@ -48,6 +53,7 @@ E('valido que apos quatro anuncios é visto a mensagem {string}') do |msg_falha_
   mensagem_esperada = @NavegarRockLov.MensagemEsperadaCadastroSemSucesso
   expect(mensagem_esperada).to eql(msg_falha_campo)
 end
+
 # E('valido que apos quatro anuncios é visto a mensagem {string}') do |msg_falha_campo|
 #   tentativas = 1
 #   maxima_tentativas = 15

@@ -82,9 +82,15 @@ Funcionalidade: Acessando pagina Web RockLov
         |              | Baterias           | 350           | Bateria.png     | 🎸 Informe a descrição do anúncio!   |
     
     @deletar_anuncio
-    Cenario: Acessar pagina rocklov web e efetuar o login e deletar um anuncio
-    Dado que acesso pagina rocklov para efetuar login
+    Esquema do Cenario: Acessar pagina rocklov web e efetuar o login e deletar um anuncio
+    Dado que estou na página de login do RockLov
     Quando preencho minhas credenciais "teste@gmail.com" e "123"
-    Então valido que fui logado com sucesso
-    E valido que fui encaminhado para tela de cadastro de anuncio
-    E efetuo o exclusão de um auncio
+    E sou direcionado para o dashboard e visualizo a seguinte mensagem "Let`s Rock Baby"
+    Então efetuo tentativa de cadastro do anuncio
+        | Equipamento   | Categoria   | Valor_Diaria    | Caminho_Arquivo   |
+        | <Equipamento> | <Categoria> | <Valor_Diaria>  | <Caminho_Arquivo> |
+    Então efetuo a operação deletar anuncio
+    
+    Exemplos:
+        | Equipamento   | Categoria          | Valor_Diaria  | Caminho_Arquivo |
+        | Violão        | Cordas             | 100           | Violão.png      |  
