@@ -6,7 +6,7 @@ require_relative "helpers"
 describe "POST /sessions" do
   context "login com sucesso" do
     before(:all) do
-      payload = { email: "betao@yahoo.com", password: "pwd123" }
+      payload = { email: "teste@gmail.com", password: "123" }
       @result = Sessions.new.login(payload)
     end
 
@@ -19,44 +19,44 @@ describe "POST /sessions" do
     end
   end
 
-  # examples = [
-  #   {
-  #     title: "senha incorreta",
-  #     payload: { email: "betao@yahoo.com", password: "123456" },
-  #     code: 401,
-  #     error: "Unauthorized",
-  #   },
-  #   {
-  #     title: "usuario não existe",
-  #     payload: { email: "404@yahoo.com", password: "123456" },
-  #     code: 401,
-  #     error: "Unauthorized",
-  #   },
-  #   {
-  #     title: "email em branco",
-  #     payload: { email: "", password: "123456" },
-  #     code: 412,
-  #     error: "required email",
-  #   },
-  #   {
-  #     title: "sem o campo email",
-  #     payload: { password: "123456" },
-  #     code: 412,
-  #     error: "required email",
-  #   },
-  #   {
-  #     title: "senha em branco",
-  #     payload: { email: "betao@yahoo.com", password: "" },
-  #     code: 412,
-  #     error: "required password",
-  #   },
-  #   {
-  #     title: "sem o campo senha",
-  #     payload: { email: "betao@yahoo.com" },
-  #     code: 412,
-  #     error: "required password",
-  #   },
-  # ]
+  examples = [
+    {
+      title: "senha incorreta",
+      payload: { email: "betao@yahoo.com", password: "123456" },
+      code: 401,
+      error: "Unauthorized",
+    },
+    {
+      title: "usuario não existe",
+      payload: { email: "404@yahoo.com", password: "123456" },
+      code: 401,
+      error: "Unauthorized",
+    },
+    {
+      title: "email em branco",
+      payload: { email: "", password: "123456" },
+      code: 412,
+      error: "required email",
+    },
+    {
+      title: "sem o campo email",
+      payload: { password: "123456" },
+      code: 412,
+      error: "required email",
+    },
+    {
+      title: "senha em branco",
+      payload: { email: "betao@yahoo.com", password: "" },
+      code: 412,
+      error: "required password",
+    },
+    {
+      title: "sem o campo senha",
+      payload: { email: "betao@yahoo.com" },
+      code: 412,
+      error: "required password",
+    },
+  ]
 
   examples = Helpers::get_fixture("login")
 
