@@ -42,8 +42,58 @@ describe "POST /signup" do
     end
   end
 
-  # name é obrigatório
-  # email é obrigatório
-  # password é obrigatório
+  context "usuario nulo" do
+    before(:all) do
+      # dado que eu tenho um novo usuario
+      payload = { name: "", email: "joao@ig.com.br", password: "pwd123" }
+      MongoDB.new.remove_user(payload[:email])
+
+      # e o email desse usuário ja foi cadastrado no sistema
+      Signup.new.create(payload)
+
+      # quando faço uma requisição para a rota /signup
+      @result = Signup.new.create(payload)
+    end
+
+    it "deve retornar mensagem" do
+      expect(@result.parsed_response["error"]).to eql "required name"
+    end
+  end
+
+  context "email nulo" do
+    before(:all) do
+      # dado que eu tenho um novo usuario
+      payload = { name: "tadeu", email: "", password: "pwd123" }
+      MongoDB.new.remove_user(payload[:email])
+
+      # e o email desse usuário ja foi cadastrado no sistema
+      Signup.new.create(payload)
+
+      # quando faço uma requisição para a rota /signup
+      @result = Signup.new.create(payload)
+    end
+
+    it "deve retornar mensagem" do
+      expect(@result.parsed_response["error"]).to eql "required email"
+    end
+  end
+
+  context "senha nula" do
+    before(:all) do
+      # dado que eu tenho um novo usuario
+      payload = { name: "tadeu", email: "tadeu@gmail.com", password: "" }
+      MongoDB.new.remove_user(payload[:email])
+
+      # e o email desse usuário ja foi cadastrado no sistema
+      Signup.new.create(payload)
+
+      # quando faço uma requisição para a rota /signup
+      @result = Signup.new.create(payload)
+    end
+
+    it "deve retornar mensagem" do
+      expect(@result.parsed_response["error"]).to eql "required password"
+    end
+  end
 
 end
