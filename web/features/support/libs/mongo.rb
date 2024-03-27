@@ -1,17 +1,27 @@
-require 'mongo'
+require "mongo"
 
-Mongo::Logger.logger = Logger.new("/Users/joaotadeu/Documents/Workspace/Cucumber/web/log/mongo.log")
+Mongo::Logger.logger = Logger.new("./logs/mongo.log")
 
 class MongoDB
-    def Remove_user(email)
-        begin
-            client = Mongo::Client.new('mongodb://rocklov-db:27017/rocklov')
-            users = client[:users]
-            users.delete_many(email: email)
-        rescue StandardError => e
-            puts "Erro ao remover usuário: #{e.message}"
-        ensure
-            client.close if client
-        end
-    end
+  attr_accessor :users, :equipos
+
+  def initialize
+    client = Mongo::Client.new("mongodb://rocklov-db:27017/rocklov")
+    @users = client[:users]
+    @equipos = client[:equipos]
+  end
+
+  def remove_user(email)
+    @users.delete_many({ email: email })
+  end
+
+  def get_user(email)
+    user = @users.find({ email: email }).first
+    return user[:_id]
+  end
+
+  def remove_equipo(name, email)
+    user_id = get_user(email)
+    @equipos.delete_many({ name: name, user: user_id })
+  end
 end

@@ -4,7 +4,7 @@ require_relative "libs/mongo"
 describe "POST /signup" do
   context "novo usuario" do
     before(:all) do
-      payload = { name: "Pitty", email: "pitty@bol.com.br", password: "pwd123" }
+      payload = { name: "Teste1", email: "teste@bol.com.br", password: "pwd123" }
       MongoDB.new.remove_user(payload[:email])
 
       @result = Signup.new.create(payload)
