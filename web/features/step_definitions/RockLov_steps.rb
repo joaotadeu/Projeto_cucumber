@@ -52,22 +52,3 @@ E('valido que apos quatro anuncios é visto a mensagem {string}') do |msg_falha_
   mensagem_esperada = @NavegarRockLov.MensagemEsperadaCadastroSemSucesso
   expect(mensagem_esperada).to eql(msg_falha_campo)
 end
-
-# E('valido que apos quatro anuncios é visto a mensagem {string}') do |msg_falha_campo|
-#   tentativas = 1
-#   maxima_tentativas = 15
-#   mensagem_esperada = ''
-#   while tentativas <= maxima_tentativas and mensagem_esperada != msg_falha_campo
-#     puts('mensagem encontrada')
-#     expect(page).to have_css('.btn', text: msg_falha_campo)
-#       if mensagem_esperada !=msg_falha_campo
-#         GenericFunctions.countdown(10)
-#       else 
-#         puts('não encontrado')
-#         tentativa+=1
-#       end
-#   end
-#       if mensagem_esperada != msg_falha_campo
-#         puts ('mensagem diferente')
-#       end
-# end
