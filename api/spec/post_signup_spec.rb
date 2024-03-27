@@ -19,80 +19,44 @@ describe "POST /signup" do
     end
   end
 
-  context "usuario ja existe" do
-    before(:all) do
-      # dado que eu tenho um novo usuario
-      payload = { name: "João da Silva", email: "joao@ig.com.br", password: "pwd123" }
-      MongoDB.new.remove_user(payload[:email])
+  examples = [
+    {
+      title: "usuario ja existe",
+      payload: { name: "João da Silva", email: "joao@ig.com.br", password: "pwd123" },
+      code: 409,
+      error: "Email already exists :(",
+    },
+    {
+      title: "usuario nulo",
+      payload: { name: "", email: "joao@ig.com.br", password: "pwd123" },
+      code: 412,
+      error: "required name",
+    },
+    {
+      title: "email nulo",
+      payload: { name: "tadeu", email: "", password: "pwd123" },
+      code: 412,
+      error: "required email",
+    },
+     title: "senha nulo",
+      code: 412,
+      payload: { name: "tadeu", email: "tadeu@gmail.com", password: "" },
+      error: "required password",
+  ]
 
-      # e o email desse usuário ja foi cadastrado no sistema
-      Signup.new.create(payload)
+  examples.each do |e|
+    context "#{e[:title]}" do
+      before(:all) do
+        @result = Signup.new.create(e[:payload])
+      end
 
-      # quando faço uma requisição para a rota /signup
-      @result = Signup.new.create(payload)
-    end
+      it "valida status code #{e[:code]}" do
+        expect(@result.code).to eql e[:code]
+      end
 
-    it "deve retornar 409" do
-      # entao deve retornar 409
-      expect(@result.code).to eql 409
-    end
-
-    it "deve retornar mensagem" do
-      expect(@result.parsed_response["error"]).to eql "Email already exists :("
-    end
-  end
-
-  context "usuario nulo" do
-    before(:all) do
-      # dado que eu tenho um novo usuario
-      payload = { name: "", email: "joao@ig.com.br", password: "pwd123" }
-      MongoDB.new.remove_user(payload[:email])
-
-      # e o email desse usuário ja foi cadastrado no sistema
-      Signup.new.create(payload)
-
-      # quando faço uma requisição para a rota /signup
-      @result = Signup.new.create(payload)
-    end
-
-    it "deve retornar mensagem" do
-      expect(@result.parsed_response["error"]).to eql "required name"
-    end
-  end
-
-  context "email nulo" do
-    before(:all) do
-      # dado que eu tenho um novo usuario
-      payload = { name: "tadeu", email: "", password: "pwd123" }
-      MongoDB.new.remove_user(payload[:email])
-
-      # e o email desse usuário ja foi cadastrado no sistema
-      Signup.new.create(payload)
-
-      # quando faço uma requisição para a rota /signup
-      @result = Signup.new.create(payload)
-    end
-
-    it "deve retornar mensagem" do
-      expect(@result.parsed_response["error"]).to eql "required email"
-    end
-  end
-
-  context "senha nula" do
-    before(:all) do
-      # dado que eu tenho um novo usuario
-      payload = { name: "tadeu", email: "tadeu@gmail.com", password: "" }
-      MongoDB.new.remove_user(payload[:email])
-
-      # e o email desse usuário ja foi cadastrado no sistema
-      Signup.new.create(payload)
-
-      # quando faço uma requisição para a rota /signup
-      @result = Signup.new.create(payload)
-    end
-
-    it "deve retornar mensagem" do
-      expect(@result.parsed_response["error"]).to eql "required password"
+      it "valida id do usuário" do
+        expect(@result.parsed_response["error"]).to eql e[:error]
+      end
     end
   end
 
