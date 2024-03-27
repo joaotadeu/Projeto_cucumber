@@ -8,10 +8,10 @@ Quando ("posiciono um item no carrinho {string}") do |item|
 end
 
 Então("valido que o item foi posicionado com sucesso e foi apresentado mensagem {string}") do |mensagem_esperada|
-  @NavegandoAmazon.ItemPocisionadoCarrinho
-  if @NavegandoAmazon.ItemPocisionadoCarrinho.text.include?(mensagem_esperada)
+  @NavegandoAmazon.ItemPosicionadoCarrinho
+  if @NavegandoAmazon.ItemPosicionadoCarrinho.text.include?(mensagem_esperada)
     puts "Mensagem esperada encontrada: #{mensagem_esperada}"
   else
-    raise "Erro: Mensagem esperada não encontrada. Esperada: #{mensagem_esperada}. Obtida: #{@NavegandoAmazon.ItemPocisionadoCarrinho.text}"
+    raise "Erro: Mensagem esperada não encontrada. Esperada: #{mensagem_esperada}. Obtida: #{@NavegandoAmazon.ItemPosicionadoCarrinho.text}"
   end
 end

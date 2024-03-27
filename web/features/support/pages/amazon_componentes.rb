@@ -12,7 +12,7 @@ class NavegandoAmazon < SitePrism::Page
         # find('#attachSiNoCoverage > span:nth-child(1) > input:nth-child(1)').click
     end
 
-    def ItemPocisionadoCarrinho
+    def ItemPosicionadoCarrinho
         return find('.a-size-medium-plus')
     end
 end
