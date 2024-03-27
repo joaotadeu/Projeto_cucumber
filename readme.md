@@ -1,0 +1,1 @@
+This project aims to practice the Ruby programming language, code version control using Git, and the Cucumber framework.
